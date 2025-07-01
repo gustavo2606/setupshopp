@@ -244,3 +244,13 @@ body {
     display: flex;
     justify-content: space-around;
 }
+
+.foto{
+    width: 350px; 
+    height: 240px;             
+}
+
+.fotoss{
+    width: 500px; 
+    height: 300px;             
+}

@@ -1,92 +1,72 @@
 <?php
 include "cabecalho.php";
 
+
+
+$id = $_GET['id'] ?? 0;
+
+
+
 $servidor = 'localhost';
 $bd = 'bd_loja';
 $usuario = 'root';
 $senha = '';
 
 $conexao = mysqli_connect($servidor, $usuario, $senha, $bd);
+
 if (!$conexao) {
-    die("Erro na conexão: " . mysqli_connect_error());
+    die("deu ruim" . mysqli_connect_error());
 }
 
-$id = $_GET['id'] ?? null;
 
-if (!$id) {
-    echo "<p>produto nao encontrado.</p>";
-    include "rodape.php";
-    exit;
-}
+$sql = "select * from produtos where id = $id ";
 
-$sql = "SELECT * FROM produtos WHERE id = $id";
+
+
 $resultado = mysqli_query($conexao, $sql);
 
-if ($linha = mysqli_fetch_assoc($resultado)) {
-    ?>
-    <style>
-        .info-box {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
 
-        .info-box h2 {
-            font-size: 28px;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
+$nome = "";
+$descricao = "";
+$marca = "";
+$preco = "";
+$quantidade_estoque = "";
+$data_cadastro = "";
+$foto = "";
 
-        .info-box .avaliacao {
-            font-size: 18px;
-            color: #f39c12;
-            margin-bottom: 10px;
-        }
-
-        .info-box p {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        .info-box .btn {
-            margin-top: 20px;
-        }
-
-        .info-box iframe {
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-    </style>
-
-    <div class="container my-5">
-        <div class="row justify-content-center align-items-start g-5">
-
-            <div class="cards">
-                <img src="<?= $linha['foto'] ?>" alt="<?= $linha['nome'] ?>" class="img-fluid rounded shadow">
-            </div>
-
-
-            <div class="cards">
-                <div class="info-box">
-                    <h2><?= $linha['nome'] ?></h2>
-                    <p><?= $linha['preco'] ?? 'Descrição não disponível.' ?></p>
-                    <p class="cards"><?= $linha['descricao']; ?></p>
-                    <p class="cards"><?= $linha['categoria']; ?></p>
-                    <p class="cards"><?= $linha['marca']; ?></p>
-
-
-
-                    <a href="Setups.php" class="btn btn-primary">← Voltar</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <?php
-} else {
-    echo "<div class='container my-5'><p class='alert alert-danger'>Filme não encontrado!</p></div>";
+while ($linha = mysqli_fetch_assoc($resultado)) {
+    $nome = $linha["nome"];
+    $descricao = $linha["descricao"];
+    $marca = $linha["marca"];
+    $preco = $linha["preco"];
+    $quantidade_estoque = $linha["quantidade_estoque"];
+    $data_cadastro = $linha["data_cadastro"];
+    $foto = $linha["foto"];
 }
 
-include "rodape.php";
+
+
+mysqli_close($conexao);
+
 ?>
+
+
+
+
+
+<div class="container">
+    <div class="row mx-5 mt-5">
+        <div class="col">
+            <img src="<?= $foto ?>" class="img-fluid fotoss">
+        </div>
+        <div class="col">
+            <h2 class="text-start"><?= $nome ?></h2>
+            <p><strong>descricao:</strong> <?= $descricao ?></p>
+            <p><strong>marca:</strong> <?= $marca ?></p>
+            <p><strong>preco:</strong> <?= $preco ?></p>
+            <p><strong>quantidade_estoque:</strong> <?= $quantidade_estoque ?></p>
+            <p><strong>data_cadastro</data>:</strong> <?= $data_cadastro ?></p>
+        </div>
+    </div>
+</div>
+<?php include "rodape.php"; ?>
