@@ -19,7 +19,7 @@ if (!$conexao) {
 }
 
 
-$sql = "select * from produtos where id = $id ";
+$sql = "select * from pecas where id = $id ";
 
 
 
@@ -28,6 +28,7 @@ $resultado = mysqli_query($conexao, $sql);
 
 $nome = "";
 $descricao = "";
+$categoria = "";
 $marca = "";
 $preco = "";
 $quantidade_estoque = "";
@@ -37,11 +38,13 @@ $foto = "";
 while ($linha = mysqli_fetch_assoc($resultado)) {
     $nome = $linha["nome"];
     $descricao = $linha["descricao"];
+    $categoria = $linha["categoria"];
     $marca = $linha["marca"];
     $preco = $linha["preco"];
     $quantidade_estoque = $linha["quantidade_estoque"];
     $data_cadastro = $linha["data_cadastro"];
     $foto = $linha["foto"];
+
 
 }
 
@@ -54,7 +57,8 @@ mysqli_close($conexao);
 
 
 
-
+4410200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 <div class="container">
     <div class="row mx-5 mt-5">
         <div class="col">
@@ -63,10 +67,12 @@ mysqli_close($conexao);
         <div class="col">
             <h2 class="text-start"><?= $nome ?></h2>
             <p><strong>descricao:</strong> <?= $descricao ?></p>
+            <p><strong>categoria</strong> <?= $categoria ?></p>
             <p><strong>marca:</strong> <?= $marca ?></p>
             <p><strong>preco:</strong> <?= $preco ?></p>
             <p><strong>quantidade_estoque:</strong> <?= $quantidade_estoque ?></p>
             <p><strong>data_cadastro</data>:</strong> <?= $data_cadastro ?></p>
+
             <a href="index.php" class="btn-voltar">← Voltar para página principal</a>
         </div>
     </div>

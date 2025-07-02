@@ -31,7 +31,7 @@
  
         <?php
  
-    $sql = "select * from produtos  ";
+    $sql = "select * from pecas  ";
     $resultado = mysqli_query($conexao, $sql);
     $avaliacao = mysqli_query($conexao, $sql);
 
