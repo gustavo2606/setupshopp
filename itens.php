@@ -42,6 +42,7 @@ while ($linha = mysqli_fetch_assoc($resultado)) {
     $quantidade_estoque = $linha["quantidade_estoque"];
     $data_cadastro = $linha["data_cadastro"];
     $foto = $linha["foto"];
+
 }
 
 
@@ -66,6 +67,7 @@ mysqli_close($conexao);
             <p><strong>preco:</strong> <?= $preco ?></p>
             <p><strong>quantidade_estoque:</strong> <?= $quantidade_estoque ?></p>
             <p><strong>data_cadastro</data>:</strong> <?= $data_cadastro ?></p>
+            <a href="index.php" class="btn-voltar">← Voltar para página principal</a>
         </div>
     </div>
 </div>

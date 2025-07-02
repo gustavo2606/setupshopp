@@ -245,12 +245,89 @@ body {
     justify-content: space-around;
 }
 
-.foto{
-    width: 350px; 
-    height: 240px;             
+.foto {
+    width: 350px;
+    height: 240px;
 }
 
-.fotoss{
-    width: 500px; 
-    height: 300px;             
+.fotosss{
+    width: 400px;
+    height: 200px;
+    margin-bottom: 30px;
 }
+
+.fotoss {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.fotoss:hover {
+    transform: scale(1.05);
+}
+
+h2.text-start {
+    color: #0072ff;
+    /* Azul tecnológico */
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+p strong {
+    color: #0072ff;
+    text-transform: uppercase;
+    margin-right: 6px;
+}
+
+.row.mx-5.mt-5 {
+    background-color: #f9faff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 114, 255, 0.2);
+}
+
+.btn {
+    background: linear-gradient(135deg, #0072ff, #00c6ff);
+    /* degrade azul moderno */
+    color: #fff;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    box-shadow: 0 4px 15px rgba(0, 198, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.btn-tech:hover {
+    background: linear-gradient(135deg, #005bbb, #009acc);
+    box-shadow: 0 6px 20px rgba(0, 154, 204, 0.6);
+    transform: translateY(-3px);
+}
+
+.btn-voltar {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0072ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-voltar:hover {
+    background-color: #005bbb;
+  }
