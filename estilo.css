@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -151,10 +152,42 @@ body {
     margin-bottom: 50px;
 }
 
-.letra {
-    font-size: 30px;
-    text-decoration: none;
+body {
+    background-color: #0d0d0d; /* Preto fosco */
+    font-family: 'Orbitron', sans-serif;
+    color: #e0e0e0; /* Cinza claro */
+    margin: 0;
+    padding: 0;
+}
 
+/* Estilizando os links */
+a.letra {
+    text-decoration: none;
+    color: #00ffcc; /* Verde Neon */
+    font-size: 1.2rem;
+    padding: 12px 18px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    margin: 5px;
+}
+
+/* Efeito hover com brilho */
+a.letra:hover {
+    color: #ffffff;
+    background-color: #8000ff; /* Roxo Gamer */
+    border: 2px solid #00ffcc;
+    box-shadow: 0 0 10px #00ffcc, 0 0 20px #8000ff;
+    transform: scale(1.05);
+}
+
+/* Container de navegação opcional */
+.navbar {
+    background-color: #1a1a1a;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 255, 204, 0.1);
+    border-bottom: 1px solid #333;
 }
 
 .banner {

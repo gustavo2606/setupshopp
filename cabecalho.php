@@ -17,6 +17,7 @@
         <nav>
             <a class="letra" href="index.php">Home</a>
             <a class="letra" href="Setups.php">Setups</a>
+            <a class="letra" href="celulares.php">Phones Gamer</a>
             <a class="letra" href="contato.php">contato</a>
         </nav>
     </header>

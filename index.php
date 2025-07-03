@@ -15,7 +15,7 @@ include "banner.php";
         <?php
         include "conexao.php";
 
-        $sql = "select * from pecas order by descricao,preco desc limit 4";
+        $sql = "select * from pecas order by descricao,preco desc limit 12";
         $resultado = mysqli_query($conexao, $sql);
 
         // echo "<pre>";

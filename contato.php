@@ -73,7 +73,7 @@ include "cabecalho.php"
 
     <div class="form-container">
 
-    <h2>Fale com a gente 🎬</h2>
+    <h2>Fale com a gente</h2>
     <form action="resposta.php" method="post">
         <label for="nome">Nome</label>
         <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
@@ -94,17 +94,8 @@ include "cabecalho.php"
 
 </dIv>
 
+<?php include "rodape.php"; ?>
 
 
-<footer class="footer">
-        <hr>
-        <img src="" alt="Rodape" width="30">
-        <small>
-            <?php echo date ("Y"); ?>
-        </small>
-    </footer>
 
-    
-</body>
-</html>
 

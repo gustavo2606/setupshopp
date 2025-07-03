@@ -19,7 +19,7 @@ if (!$conexao) {
 }
 
 
-$sql = "select * from pecas where id = $id ";
+$sql = "select * from celulares_gamers where id = $id ";
 
 
 
